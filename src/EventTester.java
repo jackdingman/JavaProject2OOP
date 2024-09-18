@@ -1,3 +1,6 @@
+
+//Removed "Date" from all setEndDateTime(s) and GetEndDateTime(s).
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -55,7 +58,7 @@ public class EventTester {
         return (
                 lastDeadline.getName().equals(lastDeadlineName)
                         && lastDeadline.getDateTime().equals(deadline)
-                        && firstMeeting.getEndDateTime().equals(end)
+                        && firstMeeting.getEndTime().equals(end)
                         && firstMeeting.getLocation().equals(location)
         );
     }
@@ -64,21 +67,21 @@ public class EventTester {
         // try using the Setters.
         lastDeadline.setName(lastDeadlineNameAlt);
         lastDeadline.setDateTime(deadline.minusDays(INCREMENT));
-        firstMeeting.setEndDateTime(end.plusDays(INCREMENT));
+        firstMeeting.setEndTime(end.plusDays(INCREMENT));
         firstMeeting.setLocation(locationAlt);
 
         // Test whether the setters set (with the getters)
         boolean passed = (
                 lastDeadline.getName().equals(lastDeadlineNameAlt)
                         && lastDeadline.getDateTime().equals(deadline.minusDays(INCREMENT))
-                        && firstMeeting.getEndDateTime().equals(end.plusDays(INCREMENT))
+                        && firstMeeting.getEndTime().equals(end.plusDays(INCREMENT))
                         && firstMeeting.getLocation().equals(locationAlt)
         );
 
         // change back to original values
         lastDeadline.setName(lastDeadlineName);
         lastDeadline.setDateTime(deadline);
-        firstMeeting.setEndDateTime(end);
+        firstMeeting.setEndTime(end);
         firstMeeting.setLocation(location);
 
         return passed;

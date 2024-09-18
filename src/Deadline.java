@@ -4,8 +4,9 @@ public class Deadline extends Event implements Completable {
 
     private boolean complete;
 
-    public Deadline(String n, LocalDateTime l){ //constructor
-
+    public Deadline(String name, LocalDateTime dateTime){ //constructor
+        this.name = name;
+        this.dateTime = dateTime;
     }
 
     @Override

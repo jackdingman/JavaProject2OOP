@@ -2,22 +2,26 @@ import java.time.*;
 
 abstract class Event implements Comparable<Event> {
 
+    //Event is the superclass
+
     String name;                            //name of the event
     LocalDateTime dateTime;                 //time and date that the event starts
 
-    //String methods are abstract because they will have unique implementations, where implementation of LocalDateTime should be the same.
-
-    public abstract String getName();                   //getter for name of the event
+    public String getName(){//getter for name of the event
+        return name;
+    }
     public LocalDateTime getDateTime(){                 //getter for dateTime
         return dateTime;
     }
     public void setDateTime(LocalDateTime dateTime) {   //sets the dateTime
     this.dateTime = dateTime;
     }
-    public abstract void setName(String name);          //sets name of the event
+    public void setName(String name){                   //sets name of the event
+        this.name = name;
+    }
 
     @Override
-    public int compareTo(Event o) {
-        return 0;
+    public int compareTo(Event e) {
+        return this.dateTime.compareTo(e.dateTime);
     }
 }
