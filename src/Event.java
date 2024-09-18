@@ -2,8 +2,8 @@ import java.time.*;
 
 abstract class Event implements Comparable<Event> {
 
-    private String name;                            //name of the event
-    private LocalDateTime dateTime;                 //time and date that the event starts
+    String name;                            //name of the event
+    LocalDateTime dateTime;                 //time and date that the event starts
 
     //String methods are abstract because they will have unique implementations, where implementation of LocalDateTime should be the same.
 
