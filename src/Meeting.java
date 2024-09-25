@@ -3,14 +3,15 @@ import java.time.*;
 public class Meeting extends Event implements Completable {
     LocalDateTime endDateTime; // the time the meeting is over
     String location;           //represents the location of the event
-    String name;               //name of the event
-    private boolean complete;
+    //String name;               //name of the event
+    boolean complete;
 
     public Meeting(String name, LocalDateTime dateTime, LocalDateTime endDateTime, String location) {
         this.name = name;                   //saving all the parameters as instance variables.
         this.endDateTime = endDateTime;
         this.location = location;
         this.dateTime = dateTime;
+
     }
 
     @Override
